@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missão com Nomes Aleatórios</title>
+</head>
+<body>
+  <h1>Missão Especial</h1>
+  <p>A missão deve ser cumprida por <span id="nome-alvo">[Nome Aleatório]</span>.</p>
+
+  <ul id="lista-nomes">
+    <!-- A lista de nomes aleatórios será inserida aqui -->
+  </ul>
+
+  <script type="module">
+    import { aleatorio } from './script.js';
+
+    // Substitui o termo [Nome Aleatório] com um nome aleatório
+    document.getElementById('nome-alvo').textContent = aleatorio();
+
+    // Gera a lista de nomes aleatórios e exibe na página
+    const nomesLista = ["João", "Maria", "Lucas", "Ana", "Carlos", "Sofia", "José", "Laura", "Pedro", "Julia"];
+    const listaElement = document.getElementById('lista-nomes');
+
+    nomesLista.forEach(nome => {
+      const li = document.createElement('li');
+      li.textContent = nome;
+      listaElement.appendChild(li);
+    });
+  </script>
+</body>
+</html>
